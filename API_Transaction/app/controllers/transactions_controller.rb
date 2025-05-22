@@ -46,6 +46,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transaction_params
-      params.expect(transaction: [ :coin_to_send, :coin_to_receive, :amount_to_send, :amount_to_receive ])
+      params.expect(transaction: [ :coin_to_send, :coin_to_receive, :amount_to_send, :amount_to_receive, :sender_id, :receiver_id ])
     end
 end
