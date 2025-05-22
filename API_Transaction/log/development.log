@@ -90,3 +90,47 @@ Information for cause: JSON::ParserError (unexpected token at '{
     "btc_wallet"'):
   
 app/controllers/users_controller.rb:44:in 'UsersController#set_user'
+  [1m[36mUser Load (46.0ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT 11 /*application='ApiTransaction'*/[0m
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*application='ApiTransaction'*/[0m
+  [1m[36mTransaction Load (1.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (sender_id = id) /* loading for pp */ LIMIT 11 /*application='ApiTransaction'*/[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*application='ApiTransaction'*/[0m
+  [1m[36mTransaction Load (0.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (sender_id = id) /* loading for pp */ LIMIT 11 /*application='ApiTransaction'*/[0m
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*application='ApiTransaction'*/[0m
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (sender_id = id) /* loading for pp */ LIMIT 11 /*application='ApiTransaction'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6519849918641668245) /*application='ApiTransaction'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ApiTransaction'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='ApiTransaction'*/[0m
+Migrating to CreateTransactions (20250522212627)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='ApiTransaction'*/[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "coin_to_send" character varying, "coin_to_receive" character varying, "amount_to_send" decimal, "amount_to_receive" decimal, "sender_id" bigint NOT NULL, "receiver_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_aa3b5f8d6f"
+FOREIGN KEY ("sender_id")
+  REFERENCES "senders" ("id")
+, CONSTRAINT "fk_rails_d261c16c42"
+FOREIGN KEY ("receiver_id")
+  REFERENCES "receivers" ("id")
+) /*application='ApiTransaction'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK /*application='ApiTransaction'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6519849918641668245) /*application='ApiTransaction'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6519849918641668245) /*application='ApiTransaction'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ApiTransaction'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='ApiTransaction'*/[0m
+Migrating to CreateTransactions (20250522212627)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='ApiTransaction'*/[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "coin_to_send" character varying, "coin_to_receive" character varying, "amount_to_send" decimal, "amount_to_receive" decimal, "sender_id" bigint NOT NULL, "receiver_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='ApiTransaction'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_transactions_on_sender_id" ON "transactions" ("sender_id") /*application='ApiTransaction'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_transactions_on_receiver_id" ON "transactions" ("receiver_id") /*application='ApiTransaction'*/[0m
+  [1m[35m (4.2ms)[0m  [1m[35mALTER TABLE "transactions" ADD CONSTRAINT "fk_rails_aa3b5f8d6f"
+FOREIGN KEY ("sender_id")
+  REFERENCES "users" ("id")
+ /*application='ApiTransaction'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "transactions" ADD CONSTRAINT "fk_rails_d261c16c42"
+FOREIGN KEY ("receiver_id")
+  REFERENCES "users" ("id")
+ /*application='ApiTransaction'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250522212627') RETURNING "version" /*application='ApiTransaction'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='ApiTransaction'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6519849918641668245) /*application='ApiTransaction'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ApiTransaction'*/[0m
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*application='ApiTransaction'*/[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1 /*application='ApiTransaction'*/[0m
+  [1m[36mTransaction Load (1.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE (sender_id = id) /* loading for pp */ LIMIT 11 /*application='ApiTransaction'*/[0m

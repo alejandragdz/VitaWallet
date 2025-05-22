@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_22_194846) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_22_212627) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "coin_to_send"
+    t.string "coin_to_receive"
+    t.decimal "amount_to_send"
+    t.decimal "amount_to_receive"
+    t.bigint "sender_id", null: false
+    t.bigint "receiver_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_transactions_on_receiver_id"
+    t.index ["sender_id"], name: "index_transactions_on_sender_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -21,4 +34,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_22_194846) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "transactions", "users", column: "receiver_id"
+  add_foreign_key "transactions", "users", column: "sender_id"
 end
