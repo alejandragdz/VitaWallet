@@ -15,3 +15,78 @@ Migrating to CreateUsers (20250522194846)
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='ApiTransaction'*/[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6519849918641668245) /*application='ApiTransaction'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ApiTransaction'*/[0m
+Started GET "/users" for ::1 at 2025-05-22 15:11:29 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ApiTransaction'*/[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:8:in 'UsersController#index'
+Completed 200 OK in 28ms (Views: -3.3ms | ActiveRecord: 19.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2025-05-22 15:12:09 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name" => "Alejandra", "btc_wallet" => 0.00192734, "usd_wallet" => 100.12, "user" => {"name" => "Alejandra", "btc_wallet" => 0.00192734, "usd_wallet" => 100.12}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+  [1m[36mUser Create (5.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ('Alejandra', 0.00192734, 100.12, '2025-05-22 21:12:09.509823', '2025-05-22 21:12:09.509823') RETURNING "id" /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+Completed 201 Created in 57ms (Views: 3.9ms | ActiveRecord: 15.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/users" for ::1 at 2025-05-22 15:12:35 -0600
+  
+ActionController::RoutingError (No route matches [PATCH] "/users"):
+  
+Started PATCH "/users/1" for ::1 at 2025-05-22 15:12:41 -0600
+Processing by UsersController#update as */*
+  Parameters: {"name" => "Alejandra", "id" => "1", "user" => {"name" => "Alejandra"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='update',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:44:in 'UsersController#set_user'
+Completed 200 OK in 50ms (Views: 6.4ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/users/1" for ::1 at 2025-05-22 15:15:35 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ApiTransaction'*/[0m
+Processing by UsersController#update as */*
+  Parameters: {"name" => 0, "btc_wallet" => 0.00192734, "usd_wallet" => 100.12, "id" => "1", "user" => {"name" => 0, "btc_wallet" => 0.00192734, "usd_wallet" => 100.12}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='update',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:44:in 'UsersController#set_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='update',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:29:in 'UsersController#update'
+  [1m[36mUser Update (3.1ms)[0m  [1m[33mUPDATE "users" SET "name" = '0', "updated_at" = '2025-05-22 21:15:35.418606' WHERE "users"."id" = 1 /*action='update',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:29:in 'UsersController#update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*action='update',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:29:in 'UsersController#update'
+Completed 200 OK in 38ms (Views: 3.1ms | ActiveRecord: 25.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/users/1" for ::1 at 2025-05-22 15:15:47 -0600
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "name": ,
+    "btc_wallet": 0.00192734,
+    "usd_wallet": 100.12
+}
+Processing by UsersController#update as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters)
+Caused by: JSON::ParserError (unexpected token at '{
+    "name": ,
+    "btc_wallet"')
+
+Information for: ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/users_controller.rb:44:in 'UsersController#set_user'
+
+Information for cause: JSON::ParserError (unexpected token at '{
+    "name": ,
+    "btc_wallet"'):
+  
+app/controllers/users_controller.rb:44:in 'UsersController#set_user'
