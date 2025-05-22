@@ -42,7 +42,7 @@ module ApiTransaction
     config.api_only = true
 
     config.generators do |g|
-      g.factory_bot_rails suffix: 'factory'
+      g.factory_bot suffix: 'factory'
     end
   end
 end
