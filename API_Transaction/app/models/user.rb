@@ -7,8 +7,8 @@ class User < ApplicationRecord
   end
 
   def validate_balance(coin, amount)
-    return amount <= btc if coin == 'btc'
-    return amount <= usd if coin == 'usd'
+    return amount <= btc_wallet if coin == 'btc'
+    return amount <= usd_wallet if coin == 'usd'
     return false
   end
 end
