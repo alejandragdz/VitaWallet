@@ -24,7 +24,7 @@ RSpec.describe "/transactions", type: :request do
       "coin_to_send" => "usd",
       "coin_to_receive" => "btc",
       "amount_to_send" => "9.99",
-      "amount_to_receive" => "9.99",
+      # "amount_to_receive" => "9.99",
       "sender_id" => user.id,
       "receiver_id" => user_2.id
     }

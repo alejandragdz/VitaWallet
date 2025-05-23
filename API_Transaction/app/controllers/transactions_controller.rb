@@ -18,6 +18,7 @@ class TransactionsController < ApplicationController
   # POST /transactions
   def create
     @transaction = Transaction.new(transaction_params)
+    sender = User.find(@transaction.sender_id)
 
     if @transaction.save
       render json: @transaction, status: :created, location: @transaction
@@ -53,7 +54,6 @@ class TransactionsController < ApplicationController
     response = http.request(request)
     response = JSON.parse(response.read_body)
     @usd_convert = response['bitcoin']['usd']
-    render json: response
   end
 
   private

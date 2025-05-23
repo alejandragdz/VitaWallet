@@ -5,4 +5,10 @@ class User < ApplicationRecord
   def transactions
     Transaction.where("sender_id = id")
   end
+
+  def validate_balance(coin, amount)
+    return amount <= btc if coin == 'btc'
+    return amount <= usd if coin == 'usd'
+    return false
+  end
 end
