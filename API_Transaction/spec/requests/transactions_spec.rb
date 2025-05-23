@@ -23,7 +23,7 @@ RSpec.describe "/transactions", type: :request do
     {
       "coin_to_send" => "usd",
       "coin_to_receive" => "btc",
-      "amount_to_send" => "9.99",
+      "amount_to_send" => "100.0",
       # "amount_to_receive" => "9.99",
       "sender_id" => user.id,
       "receiver_id" => user_2.id
@@ -32,12 +32,21 @@ RSpec.describe "/transactions", type: :request do
 
   let(:invalid_attributes) {
     {
-      coin_to_send: "usd",
-      coin_to_receive: "btc",
-      amount_to_send: "9.99",
-      amount_to_receive: "9.99",
-      sender: user
-      # receiver: create(:second_user)
+      "coin_to_send" => "usd",
+      "coin_to_receive" => "btc",
+      "amount_to_send" => "100.0",
+      "sender_id" => user.id
+      # "receiver_id" => user_2.id
+    }
+  }
+
+  let(:insufficient_balance) {
+    {
+      "coin_to_send" => "usd",
+      "coin_to_receive" => "btc",
+      "amount_to_send" => "1000.0",
+      "sender_id" => user.id
+      # "receiver_id" => user_2.id
     }
   }
 
@@ -125,34 +134,15 @@ RSpec.describe "/transactions", type: :request do
         expect(response.content_type).to match(a_string_including("application/json"))
       end
     end
-  end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        {
-          coin_to_send: "btc"
-        }
-      }
-
-      it "renders a JSON response with the transaction" do
-        transaction = Transaction.create! valid_attributes
-        patch transaction_url(transaction),
-              params: { transaction: new_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:ok)
-        expect(response.content_type).to match(a_string_including("application/json"))
+    context "without sufficient balance" do
+      it "without sufficient usd" do
+        post transactions_url,
+             params: { transaction: insufficient_balance }, headers: valid_headers, as: :json
+        expect(response).to have_http_status(400)
+        expect(response.body).to match(a_string_including("Balance insuficiente"))
       end
     end
-
-    # context "with invalid parameters" do
-    #   it "renders a JSON response with errors for the transaction" do
-    #     transaction = Transaction.create! valid_attributes
-    #     patch transaction_url(transaction),
-    #           params: { transaction: invalid_attributes }, headers: valid_headers, as: :json
-    #     expect(response).to have_http_status(:unprocessable_entity)
-    #     expect(response.content_type).to match(a_string_including("application/json"))
-    #   end
-    # end
   end
 
   describe "DELETE /destroy" do

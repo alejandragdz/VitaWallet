@@ -1,8 +1,8 @@
 require 'uri'
 require 'net/http'
 class TransactionsController < ApplicationController
-  before_action :set_transaction, only: %i[ show update destroy ]
-  before_action :convert, only: %i[  ]
+  before_action :set_transaction, only: %i[ show destroy ]
+  # before_action :convert, only: %i[  ]
 
   # GET /transactions
   def index
@@ -20,19 +20,16 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(transaction_params)
     sender = User.find(@transaction.sender_id)
 
-    if @transaction.save
-      render json: @transaction, status: :created, location: @transaction
+    # Verificar que el usuario que envía tiene suficiente en su wallet
+    balance_validation = !sender.validate_balance(@transaction.coin_to_send, @transaction.amount_to_send)
+    if balance_validation
+      render json: { error: 'Balance insuficiente' }, status: 400
     else
-      render json: @transaction.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /transactions/1
-  def update
-    if @transaction.update(transaction_params)
-      render json: @transaction
-    else
-      render json: @transaction.errors, status: :unprocessable_entity
+      if @transaction.save
+        render json: @transaction, status: :created, location: @transaction
+      else
+        render json: @transaction.errors, status: :unprocessable_entity
+      end
     end
   end
 
@@ -54,6 +51,7 @@ class TransactionsController < ApplicationController
     response = http.request(request)
     response = JSON.parse(response.read_body)
     @usd_convert = response['bitcoin']['usd']
+    render json: response
   end
 
   private

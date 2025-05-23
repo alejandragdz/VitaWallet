@@ -217,3 +217,17 @@ Processing by TransactionsController#show as */*
 Completed 200 OK in 69ms (Views: 9.4ms | ActiveRecord: 44.1ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/transactions/convert" for ::1 at 2025-05-23 08:20:48 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ApiTransaction'*/[0m
+Processing by TransactionsController#convert as */*
+Completed 204 No Content in 308ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/transactions" for ::1 at 2025-05-23 08:28:18 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 1000, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 1000, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+Completed 400 Bad Request in 66ms (Views: 0.2ms | ActiveRecord: 43.1ms (1 query, 0 cached) | GC: 10.6ms)
+
+
