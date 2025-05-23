@@ -129,6 +129,11 @@ RSpec.describe "/transactions", type: :request do
              params: { transaction: valid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including("application/json"))
+        transaction = Transaction.last
+        sender = transaction.sender
+        receiver = transaction.receiver
+        expect(sender.usd_wallet).to eq(user.usd_wallet - transaction.amount_to_send)
+        expect(receiver.btc_wallet).to eq(user_2.btc_wallet + transaction.amount_to_receive)
       end
 
       it "creates a new Transaction btc to usd" do
@@ -137,6 +142,11 @@ RSpec.describe "/transactions", type: :request do
         res = JSON.parse(response.body)
         valid_attributes_btc['amount_to_send'] = valid_attributes_btc['amount_to_send'].to_s
         expect(res).to include(valid_attributes_btc)
+        transaction = Transaction.last
+        sender = transaction.sender
+        receiver = transaction.receiver
+        expect(sender.btc_wallet).to eq(user.btc_wallet - transaction.amount_to_send)
+        expect(receiver.usd_wallet).to eq(user_2.usd_wallet + transaction.amount_to_receive)
       end
 
       it "creates a new Transaction usd to usd" do
@@ -145,6 +155,11 @@ RSpec.describe "/transactions", type: :request do
         res = JSON.parse(response.body)
         valid_attributes_same['amount_to_send'] = valid_attributes_same['amount_to_send'].to_s
         expect(res).to include(valid_attributes_same)
+        transaction = Transaction.last
+        sender = transaction.sender
+        receiver = transaction.receiver
+        expect(sender.usd_wallet).to eq(user.usd_wallet - transaction.amount_to_send)
+        expect(receiver.usd_wallet).to eq(user_2.usd_wallet + transaction.amount_to_receive)
       end
     end
 
