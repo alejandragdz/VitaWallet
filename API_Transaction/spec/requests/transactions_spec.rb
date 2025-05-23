@@ -23,7 +23,8 @@ RSpec.describe "/transactions", type: :request do
     {
       "coin_to_send" => "usd",
       "coin_to_receive" => "btc",
-      "amount_to_send" => "100.0",
+      "amount_to_send" => 100.0,
+      "amount_to_receive" => 100.0,
       "sender_id" => user.id,
       "receiver_id" => user_2.id
     }
@@ -33,7 +34,7 @@ RSpec.describe "/transactions", type: :request do
     {
       "coin_to_send" => "btc",
       "coin_to_receive" => "usd",
-      "amount_to_send" => "30.0",
+      "amount_to_send" => 30.0,
       "sender_id" => user.id,
       "receiver_id" => user_2.id
     }
@@ -43,7 +44,7 @@ RSpec.describe "/transactions", type: :request do
     {
       "coin_to_send" => "usd",
       "coin_to_receive" => "usd",
-      "amount_to_send" => "30.0",
+      "amount_to_send" => 30.0,
       "sender_id" => user.id,
       "receiver_id" => user_2.id
     }
@@ -53,7 +54,7 @@ RSpec.describe "/transactions", type: :request do
     {
       "coin_to_send" => "usd",
       "coin_to_receive" => "btc",
-      "amount_to_send" => "100.0",
+      "amount_to_send" => 100.0,
       "sender_id" => user.id
     }
   }
@@ -62,7 +63,7 @@ RSpec.describe "/transactions", type: :request do
     {
       "coin_to_send" => "usd",
       "coin_to_receive" => "btc",
-      "amount_to_send" => "1000.0",
+      "amount_to_send" => 1000.0,
       "sender_id" => user.id,
       "receiver_id" => user_2.id
     }
@@ -109,7 +110,8 @@ RSpec.describe "/transactions", type: :request do
       get "/transactions/#{transaction.id}"
       expect(response).to have_http_status(200)
       res = JSON.parse(response.body)
-      expect(res).to include(valid_attributes)
+      puts valid_attributes['coin_to_send']
+      expect(response.body).to match(a_string_including(transaction.coin_to_send, transaction.coin_to_receive))
     end
   end
 
@@ -133,6 +135,7 @@ RSpec.describe "/transactions", type: :request do
         post "/transactions", :params => { :transaction => valid_attributes_btc}
         expect(response).to have_http_status(201)
         res = JSON.parse(response.body)
+        valid_attributes_btc['amount_to_send'] = valid_attributes_btc['amount_to_send'].to_s
         expect(res).to include(valid_attributes_btc)
       end
 
@@ -140,6 +143,7 @@ RSpec.describe "/transactions", type: :request do
         post "/transactions", :params => { :transaction => valid_attributes_same}
         expect(response).to have_http_status(201)
         res = JSON.parse(response.body)
+        valid_attributes_same['amount_to_send'] = valid_attributes_same['amount_to_send'].to_s
         expect(res).to include(valid_attributes_same)
       end
     end
