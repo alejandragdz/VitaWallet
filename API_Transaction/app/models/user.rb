@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   def transactions
-    Transaction.where("sender_id = id")
+    Transaction.where(sender_id: id)
   end
 
   def validate_balance(coin, amount)

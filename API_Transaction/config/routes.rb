@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "/transactions/convert", to: "transactions#convert"
+  get "/users/:id/transactions", to: "users#transactions"
   resources :transactions
   resources :users
 

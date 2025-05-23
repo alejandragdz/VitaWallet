@@ -128,4 +128,16 @@ RSpec.describe "/users", type: :request do
       }.to change(User, :count).by(-1)
     end
   end
+
+  describe "/users/1/transactions" do
+    it "shows all the transactions for a user" do
+      user = User.create! valid_attributes
+      transaction = Transaction.create(sender: user, receiver: create(:user), coin_to_send: 'usd', coin_to_receive: 'btc', amount_to_send: 1, amount_to_receive: 1)
+      transaction = Transaction.create(sender: user, receiver: create(:user), coin_to_send: 'usd', coin_to_receive: 'btc', amount_to_send: 1, amount_to_receive: 1)
+      get "/users/#{user.id}/transactions"
+      expect(response).to have_http_status(200)
+      res = JSON.parse(response.body)
+      expect(res['transactions'].length).to eq(2)
+    end
+  end
 end

@@ -9,7 +9,11 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations' do
-    # it { should have_many(:transactions)}
+    it 'relation transactions' do
+      transaction = Transaction.create(sender: user, receiver: create(:user), coin_to_send: 'usd', coin_to_receive: 'btc', amount_to_send: 1, amount_to_receive: 1)
+      expect(user.transactions.length).to eq(1) 
+      expect(user.transactions).to include(transaction) 
+    end
 
     it 'validate_usd_balance' do
       # usd_wallet  { 150.00 }

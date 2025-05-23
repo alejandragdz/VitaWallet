@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show update destroy ]
+  before_action :set_user, only: %i[ show update destroy transactions ]
 
   # GET /users
   def index
@@ -36,6 +36,11 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy!
+  end
+
+  # /users/1/transactions
+  def transactions
+    render json: {transactions: @user.transactions}
   end
 
   private
