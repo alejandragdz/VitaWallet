@@ -1,11 +1,13 @@
+require 'uri'
+require 'net/http'
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[ show update destroy ]
+  before_action :convert, only: %i[  ]
 
   # GET /transactions
   def index
     @transactions = Transaction.all
-
-    render json: @transactions, status: 200
+    render json: @transactions
   end
 
   # GET /transactions/1
@@ -36,6 +38,21 @@ class TransactionsController < ApplicationController
   # DELETE /transactions/1
   def destroy
     @transaction.destroy!
+  end
+
+  def convert
+    url = URI("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+
+    request = Net::HTTP::Get.new(url)
+    request["accept"] = 'application/json'
+    request["x-cg-demo-api-key"] = 'CG-VHP6bnz5YWxJcGGpEJiJUiw7'
+
+    response = http.request(request)
+    response = JSON.parse(response.read_body)
+    @usd_convert = response['bitcoin']['usd']
   end
 
   private

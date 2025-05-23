@@ -22781,3 +22781,541 @@ Completed 204 No Content in 1ms (ActiveRecord: 0.9ms (2 queries, 0 cached) | GC:
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.102390"], ["updated_at", "2025-05-23 13:21:05.102390"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.106918"], ["updated_at", "2025-05-23 13:21:05.106918"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTransaction Create (1.4ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1776], ["receiver_id", 1777], ["created_at", "2025-05-23 13:21:05.108720"], ["updated_at", "2025-05-23 13:21:05.108720"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.113361"], ["updated_at", "2025-05-23 13:21:05.113361"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.115534"], ["updated_at", "2025-05-23 13:21:05.115534"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.116558"], ["updated_at", "2025-05-23 13:21:05.116558"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1779], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1780], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1779], ["receiver_id", 1780], ["created_at", "2025-05-23 13:21:05.123280"], ["updated_at", "2025-05-23 13:21:05.123280"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1779], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1780], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1779], ["receiver_id", 1780], ["created_at", "2025-05-23 13:21:05.125527"], ["updated_at", "2025-05-23 13:21:05.125527"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1779], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1780], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1779], ["receiver_id", 1780], ["created_at", "2025-05-23 13:21:05.128041"], ["updated_at", "2025-05-23 13:21:05.128041"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1779], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1780], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1779], ["receiver_id", 1780], ["created_at", "2025-05-23 13:21:05.129667"], ["updated_at", "2025-05-23 13:21:05.129667"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/transactions" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#index as JSON
+  Parameters: {"transaction" => {}}
+  [1m[36mTransaction Load (0.6ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+Completed 200 OK in 14ms (Views: 1.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 9.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.152500"], ["updated_at", "2025-05-23 13:21:05.152500"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.153699"], ["updated_at", "2025-05-23 13:21:05.153699"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1781], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1782], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1781], ["receiver_id", 1782], ["created_at", "2025-05-23 13:21:05.155101"], ["updated_at", "2025-05-23 13:21:05.155101"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1781], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1782], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1781], ["receiver_id", 1782], ["created_at", "2025-05-23 13:21:05.157146"], ["updated_at", "2025-05-23 13:21:05.157146"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1781], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1782], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1781], ["receiver_id", 1782], ["created_at", "2025-05-23 13:21:05.160361"], ["updated_at", "2025-05-23 13:21:05.160361"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1781], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1782], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1781], ["receiver_id", 1782], ["created_at", "2025-05-23 13:21:05.161869"], ["updated_at", "2025-05-23 13:21:05.161869"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/transactions" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#index as HTML
+  [1m[36mTransaction Load (0.1ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.168457"], ["updated_at", "2025-05-23 13:21:05.168457"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.169190"], ["updated_at", "2025-05-23 13:21:05.169190"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1783], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1784], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1783], ["receiver_id", 1784], ["created_at", "2025-05-23 13:21:05.170408"], ["updated_at", "2025-05-23 13:21:05.170408"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1783], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1784], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1783], ["receiver_id", 1784], ["created_at", "2025-05-23 13:21:05.171690"], ["updated_at", "2025-05-23 13:21:05.171690"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1783], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1784], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1783], ["receiver_id", 1784], ["created_at", "2025-05-23 13:21:05.173192"], ["updated_at", "2025-05-23 13:21:05.173192"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1783], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1784], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1783], ["receiver_id", 1784], ["created_at", "2025-05-23 13:21:05.174716"], ["updated_at", "2025-05-23 13:21:05.174716"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1783], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1784], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1783], ["receiver_id", 1784], ["created_at", "2025-05-23 13:21:05.176232"], ["updated_at", "2025-05-23 13:21:05.176232"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/transactions/1168" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#show as JSON
+  Parameters: {"id" => "1168", "transaction" => {}}
+  [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = $1 LIMIT $2[0m  [["id", 1168], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.183201"], ["updated_at", "2025-05-23 13:21:05.183201"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.184039"], ["updated_at", "2025-05-23 13:21:05.184039"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1785], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1786], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1785], ["receiver_id", 1786], ["created_at", "2025-05-23 13:21:05.187751"], ["updated_at", "2025-05-23 13:21:05.187751"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1785], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1786], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1785], ["receiver_id", 1786], ["created_at", "2025-05-23 13:21:05.189579"], ["updated_at", "2025-05-23 13:21:05.189579"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1785], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1786], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1785], ["receiver_id", 1786], ["created_at", "2025-05-23 13:21:05.190759"], ["updated_at", "2025-05-23 13:21:05.190759"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1785], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1786], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1785], ["receiver_id", 1786], ["created_at", "2025-05-23 13:21:05.191974"], ["updated_at", "2025-05-23 13:21:05.191974"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1785], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1786], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1785], ["receiver_id", 1786], ["created_at", "2025-05-23 13:21:05.194950"], ["updated_at", "2025-05-23 13:21:05.194950"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/transactions/1173" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#show as HTML
+  Parameters: {"id" => "1173"}
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = $1 LIMIT $2[0m  [["id", 1173], ["LIMIT", 1]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.202988"], ["updated_at", "2025-05-23 13:21:05.202988"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.204224"], ["updated_at", "2025-05-23 13:21:05.204224"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1787], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1788], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1787], ["receiver_id", 1788], ["created_at", "2025-05-23 13:21:05.205288"], ["updated_at", "2025-05-23 13:21:05.205288"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1787], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1788], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1787], ["receiver_id", 1788], ["created_at", "2025-05-23 13:21:05.206350"], ["updated_at", "2025-05-23 13:21:05.206350"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1787], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1788], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1787], ["receiver_id", 1788], ["created_at", "2025-05-23 13:21:05.207373"], ["updated_at", "2025-05-23 13:21:05.207373"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1787], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1788], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1787], ["receiver_id", 1788], ["created_at", "2025-05-23 13:21:05.208479"], ["updated_at", "2025-05-23 13:21:05.208479"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTransaction Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+Started POST "/transactions" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#create as JSON
+  Parameters: {"transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => "9.99", "amount_to_receive" => "9.99", "sender_id" => 1787, "receiver_id" => 1788}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1787], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1788], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1787], ["receiver_id", 1788], ["created_at", "2025-05-23 13:21:05.211397"], ["updated_at", "2025-05-23 13:21:05.211397"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTransaction Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.213660"], ["updated_at", "2025-05-23 13:21:05.213660"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.214259"], ["updated_at", "2025-05-23 13:21:05.214259"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1789], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1790], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1789], ["receiver_id", 1790], ["created_at", "2025-05-23 13:21:05.215354"], ["updated_at", "2025-05-23 13:21:05.215354"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1789], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1790], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1789], ["receiver_id", 1790], ["created_at", "2025-05-23 13:21:05.216537"], ["updated_at", "2025-05-23 13:21:05.216537"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1789], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1790], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1789], ["receiver_id", 1790], ["created_at", "2025-05-23 13:21:05.217703"], ["updated_at", "2025-05-23 13:21:05.217703"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1789], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1790], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1789], ["receiver_id", 1790], ["created_at", "2025-05-23 13:21:05.218687"], ["updated_at", "2025-05-23 13:21:05.218687"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/transactions" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#create as JSON
+  Parameters: {"transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => "9.99", "amount_to_receive" => "9.99", "sender_id" => 1789, "receiver_id" => 1790}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1789], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1790], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1789], ["receiver_id", 1790], ["created_at", "2025-05-23 13:21:05.220348"], ["updated_at", "2025-05-23 13:21:05.220348"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.222098"], ["updated_at", "2025-05-23 13:21:05.222098"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.222687"], ["updated_at", "2025-05-23 13:21:05.222687"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1791], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1792], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1791], ["receiver_id", 1792], ["created_at", "2025-05-23 13:21:05.224222"], ["updated_at", "2025-05-23 13:21:05.224222"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1791], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1792], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1791], ["receiver_id", 1792], ["created_at", "2025-05-23 13:21:05.225409"], ["updated_at", "2025-05-23 13:21:05.225409"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1791], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1792], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1791], ["receiver_id", 1792], ["created_at", "2025-05-23 13:21:05.226410"], ["updated_at", "2025-05-23 13:21:05.226410"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1791], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1792], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1791], ["receiver_id", 1792], ["created_at", "2025-05-23 13:21:05.227544"], ["updated_at", "2025-05-23 13:21:05.227544"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/transactions" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#create as HTML
+  Parameters: {"transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => "9.99", "amount_to_receive" => "9.99", "sender_id" => "1791", "receiver_id" => "1792"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1791], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1792], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1791], ["receiver_id", 1792], ["created_at", "2025-05-23 13:21:05.231406"], ["updated_at", "2025-05-23 13:21:05.231406"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.233797"], ["updated_at", "2025-05-23 13:21:05.233797"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.234344"], ["updated_at", "2025-05-23 13:21:05.234344"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1793], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1794], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1793], ["receiver_id", 1794], ["created_at", "2025-05-23 13:21:05.235483"], ["updated_at", "2025-05-23 13:21:05.235483"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1793], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1794], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1793], ["receiver_id", 1794], ["created_at", "2025-05-23 13:21:05.236508"], ["updated_at", "2025-05-23 13:21:05.236508"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1793], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1794], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1793], ["receiver_id", 1794], ["created_at", "2025-05-23 13:21:05.237686"], ["updated_at", "2025-05-23 13:21:05.237686"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1793], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1794], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1793], ["receiver_id", 1794], ["created_at", "2025-05-23 13:21:05.238777"], ["updated_at", "2025-05-23 13:21:05.238777"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTransaction Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+Started POST "/transactions" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#create as JSON
+  Parameters: {"transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => "9.99", "amount_to_receive" => "9.99", "sender" => {"id" => 1793, "name" => "John", "btc_wallet" => "31.01491002", "usd_wallet" => "150.0", "created_at" => "2025-05-23T13:21:05.233Z", "updated_at" => "2025-05-23T13:21:05.233Z"}}}
+Completed 422 Unprocessable Content in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTransaction Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.247421"], ["updated_at", "2025-05-23 13:21:05.247421"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.248399"], ["updated_at", "2025-05-23 13:21:05.248399"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1795], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1796], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1795], ["receiver_id", 1796], ["created_at", "2025-05-23 13:21:05.249405"], ["updated_at", "2025-05-23 13:21:05.249405"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1795], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1796], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1795], ["receiver_id", 1796], ["created_at", "2025-05-23 13:21:05.250375"], ["updated_at", "2025-05-23 13:21:05.250375"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1795], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1796], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1795], ["receiver_id", 1796], ["created_at", "2025-05-23 13:21:05.251309"], ["updated_at", "2025-05-23 13:21:05.251309"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1795], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1796], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1795], ["receiver_id", 1796], ["created_at", "2025-05-23 13:21:05.252305"], ["updated_at", "2025-05-23 13:21:05.252305"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/transactions" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#create as JSON
+  Parameters: {"transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => "9.99", "amount_to_receive" => "9.99", "sender" => {"id" => 1795, "name" => "John", "btc_wallet" => "31.01491002", "usd_wallet" => "150.0", "created_at" => "2025-05-23T13:21:05.247Z", "updated_at" => "2025-05-23T13:21:05.247Z"}}}
+Completed 422 Unprocessable Content in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.256285"], ["updated_at", "2025-05-23 13:21:05.256285"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.256801"], ["updated_at", "2025-05-23 13:21:05.256801"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1797], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1798], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1797], ["receiver_id", 1798], ["created_at", "2025-05-23 13:21:05.257804"], ["updated_at", "2025-05-23 13:21:05.257804"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1797], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1798], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1797], ["receiver_id", 1798], ["created_at", "2025-05-23 13:21:05.258950"], ["updated_at", "2025-05-23 13:21:05.258950"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1797], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1798], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1797], ["receiver_id", 1798], ["created_at", "2025-05-23 13:21:05.259837"], ["updated_at", "2025-05-23 13:21:05.259837"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1797], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1798], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1797], ["receiver_id", 1798], ["created_at", "2025-05-23 13:21:05.260935"], ["updated_at", "2025-05-23 13:21:05.260935"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1797], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1798], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.1ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1797], ["receiver_id", 1798], ["created_at", "2025-05-23 13:21:05.262113"], ["updated_at", "2025-05-23 13:21:05.262113"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/transactions/1201" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#update as JSON
+  Parameters: {"transaction" => {"coin_to_send" => "btc"}, "id" => "1201"}
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = $1 LIMIT $2[0m  [["id", 1201], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTransaction Update (0.4ms)[0m  [1m[33mUPDATE "transactions" SET "coin_to_send" = $1, "updated_at" = $2 WHERE "transactions"."id" = $3[0m  [["coin_to_send", "btc"], ["updated_at", "2025-05-23 13:21:05.263579"], ["id", 1201]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "John"], ["btc_wallet", "31.01491002"], ["usd_wallet", "150.0"], ["created_at", "2025-05-23 13:21:05.265644"], ["updated_at", "2025-05-23 13:21:05.265644"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Robert"], ["btc_wallet", "100.01491002"], ["usd_wallet", "200.0"], ["created_at", "2025-05-23 13:21:05.266267"], ["updated_at", "2025-05-23 13:21:05.266267"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1799], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1800], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1799], ["receiver_id", 1800], ["created_at", "2025-05-23 13:21:05.267550"], ["updated_at", "2025-05-23 13:21:05.267550"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1799], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1800], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1799], ["receiver_id", 1800], ["created_at", "2025-05-23 13:21:05.268683"], ["updated_at", "2025-05-23 13:21:05.268683"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1799], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1800], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1799], ["receiver_id", 1800], ["created_at", "2025-05-23 13:21:05.269944"], ["updated_at", "2025-05-23 13:21:05.269944"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1799], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1800], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.3ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1799], ["receiver_id", 1800], ["created_at", "2025-05-23 13:21:05.271227"], ["updated_at", "2025-05-23 13:21:05.271227"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1799], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1800], ["LIMIT", 1]]
+  [1m[36mTransaction Create (0.2ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["coin_to_send", "usd"], ["coin_to_receive", "btc"], ["amount_to_send", "9.99"], ["amount_to_receive", "9.99"], ["sender_id", 1799], ["receiver_id", 1800], ["created_at", "2025-05-23 13:21:05.272409"], ["updated_at", "2025-05-23 13:21:05.272409"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTransaction Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+Started DELETE "/transactions/1206" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by TransactionsController#destroy as JSON
+  Parameters: {"id" => "1206", "transaction" => {}}
+  [1m[36mTransaction Load (0.2ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = $1 LIMIT $2[0m  [["id", 1206], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTransaction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "transactions" WHERE "transactions"."id" = $1[0m  [["id", 1206]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTransaction Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "transactions"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pedro"], ["btc_wallet", "0.00091234"], ["usd_wallet", "12.03"], ["created_at", "2025-05-23 13:21:05.280014"], ["updated_at", "2025-05-23 13:21:05.280014"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#index as JSON
+  Parameters: {"user" => {}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pedro"], ["btc_wallet", "0.00091234"], ["usd_wallet", "12.03"], ["created_at", "2025-05-23 13:21:05.282458"], ["updated_at", "2025-05-23 13:21:05.282458"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/1802" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#show as JSON
+  Parameters: {"id" => "1802", "user" => {}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1802], ["LIMIT", 1]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user" => {"name" => "Pedro", "usd_wallet" => 12.03, "btc_wallet" => 0.00091234}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pedro"], ["btc_wallet", "0.00091234"], ["usd_wallet", "12.03"], ["created_at", "2025-05-23 13:21:05.285096"], ["updated_at", "2025-05-23 13:21:05.285096"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/users" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user" => {"name" => "Pedro", "usd_wallet" => 12.03, "btc_wallet" => 0.00091234}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pedro"], ["btc_wallet", "0.00091234"], ["usd_wallet", "12.03"], ["created_at", "2025-05-23 13:21:05.287260"], ["updated_at", "2025-05-23 13:21:05.287260"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user" => {"name" => nil, "usd_wallet" => 12.03, "btc_wallet" => 0.00091234}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/users" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#create as JSON
+  Parameters: {"user" => {"name" => nil, "usd_wallet" => 12.03, "btc_wallet" => 0.00091234}}
+Completed 422 Unprocessable Content in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pedro"], ["btc_wallet", "0.00091234"], ["usd_wallet", "12.03"], ["created_at", "2025-05-23 13:21:05.291732"], ["updated_at", "2025-05-23 13:21:05.291732"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/users/1805" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#update as JSON
+  Parameters: {"user" => {"name" => "Juan"}, "id" => "1805"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1805], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["name", "Juan"], ["updated_at", "2025-05-23 13:21:05.293132"], ["id", 1805]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pedro"], ["btc_wallet", "0.00091234"], ["usd_wallet", "12.03"], ["created_at", "2025-05-23 13:21:05.294586"], ["updated_at", "2025-05-23 13:21:05.294586"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/users/1806" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#update as JSON
+  Parameters: {"user" => {"name" => nil, "usd_wallet" => 12.03, "btc_wallet" => 0.00091234}, "id" => "1806"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1806], ["LIMIT", 1]]
+Completed 422 Unprocessable Content in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pedro"], ["btc_wallet", "0.00091234"], ["usd_wallet", "12.03"], ["created_at", "2025-05-23 13:21:05.298154"], ["updated_at", "2025-05-23 13:21:05.298154"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/1807" for 127.0.0.1 at 2025-05-23 07:21:05 -0600
+Processing by UsersController#destroy as JSON
+  Parameters: {"id" => "1807", "user" => {}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1807], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1807]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mUser Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
