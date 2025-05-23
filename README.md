@@ -15,13 +15,13 @@
 
 ## **Endpoints**: Prueba con curl
     - Nuevo usuario 
-        `curl -H "Content-Type:application/json" http://localhost:3000/users -X POST -d '{"user": {"name": "Juan", "usd_wallet": 100.0, "btc_wallet": 100.0}}'`
+        curl -H "Content-Type:application/json" http://localhost:3000/users -X POST -d '{"user": {"name": "Juan", "usd_wallet": 100.0, "btc_wallet": 100.0}}'
     - Ver todos los usuarios
-        `curl -L http://localhost:3000/users`
+        curl -L http://localhost:3000/users
     - Ver todas las transacciones:
-        `curl -L http://localhost:3000/transactions`
+        curl -L http://localhost:3000/transactions
     - Ver una transacción en específico **(Detalle de transacción)**:
-        `curl -L http://localhost:3000/transactions/1`
+        curl -L http://localhost:3000/transactions/1
     - Nueva transacción:
-        `curl -H "Content-Type:application/json" http://localhost:3000/transactions -X POST -d '{"transaction": {"sender_id": 1, "receiver_id": 2, "coin_to_send": "usd", "coin_to_receive": "btc", "amount_to_send": 10}}'`
+        curl -H "Content-Type:application/json" http://localhost:3000/transactions -X POST -d '{"transaction": {"sender_id": 1, "receiver_id": 2, "coin_to_send": "usd", "coin_to_receive": "btc", "amount_to_send": 10}}'
     
