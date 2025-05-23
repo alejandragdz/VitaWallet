@@ -11,4 +11,16 @@ class User < ApplicationRecord
     return amount <= usd_wallet if coin == 'usd'
     return false
   end
+
+  def update_wallet(coin, sender, amount)
+      if sender
+        amount = amount * -1
+      end
+
+      if coin == 'usd'
+        update(usd_wallet: usd_wallet+amount)
+      else
+        update(btc_wallet: btc_wallet+amount)
+      end
+    end
 end

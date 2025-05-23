@@ -46,6 +46,11 @@ class TransactionsController < ApplicationController
       end
 
       if @transaction.save
+        # Update de wallet de sender
+        sender.update_wallet(coin_to_send, true, amount_to_send)
+        # Update de wallet de receiver
+        @transaction.receiver.update_wallet(coin_to_receive, false, @transaction.amount_to_receive)
+
         render json: @transaction, status: :created, location: @transaction
       else
         render json: @transaction.errors, status: :unprocessable_entity
