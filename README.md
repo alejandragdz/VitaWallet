@@ -24,4 +24,6 @@
         curl -L http://localhost:3000/transactions/1
     - Nueva transacción:
         curl -H "Content-Type:application/json" http://localhost:3000/transactions -X POST -d '{"transaction": {"sender_id": 1, "receiver_id": 2, "coin_to_send": "usd", "coin_to_receive": "btc", "amount_to_send": 10}}'
-    
+
+## Prueba de endpoints en Postman:
+    https://vitawallet-challenge.postman.co/workspace/VitaWallet-Challenge-Workspace~3fe896bf-0b43-456a-83b7-a2a5b640da08/collection/36286241-1e469890-6405-4d0b-afe6-434ea8a49f0a?action=share&creator=36286241
