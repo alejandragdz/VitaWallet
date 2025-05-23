@@ -231,3 +231,181 @@ Processing by TransactionsController#create as */*
 Completed 400 Bad Request in 66ms (Views: 0.2ms | ActiveRecord: 43.1ms (1 query, 0 cached) | GC: 10.6ms)
 
 
+Started POST "/transactions" for ::1 at 2025-05-23 08:37:54 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 10.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method 'coint_to_receive' for an instance of Transaction):
+  
+app/controllers/transactions_controller.rb:29:in 'TransactionsController#create'
+Started POST "/transactions" for ::1 at 2025-05-23 08:38:36 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 12.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+TypeError (nil can't be coerced into Integer):
+  
+app/controllers/transactions_controller.rb:41:in 'Integer#/'
+app/controllers/transactions_controller.rb:41:in 'TransactionsController#create'
+Started POST "/transactions" for ::1 at 2025-05-23 08:39:12 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ('usd', 'btc', 10.0, 100.0, 1, 2, '2025-05-23 14:39:13.000708', '2025-05-23 14:39:13.000708') RETURNING "id" /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+Completed 201 Created in 87ms (Views: 1.7ms | ActiveRecord: 11.8ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started POST "/transactions" for ::1 at 2025-05-23 08:39:39 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "sender_id" => 1, "receiver_id" => 2}}
+Filter chain halted as :convert rendered or redirected
+Completed 200 OK in 331ms (Views: 0.3ms | ActiveRecord: 1.5ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/transactions" for ::1 at 2025-05-23 08:39:53 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+  [1m[36mTransaction Create (0.7ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ('usd', 'btc', 10.0, 0.0, 1, 2, '2025-05-23 14:39:54.186955', '2025-05-23 14:39:54.186955') RETURNING "id" /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:49:in 'TransactionsController#create'
+Completed 201 Created in 352ms (Views: 1.9ms | ActiveRecord: 10.2ms (4 queries, 1 cached) | GC: 0.0ms)
+
+
+Started POST "/transactions" for ::1 at 2025-05-23 08:40:56 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/controllers/transactions_controller.rb:50:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:50:in 'TransactionsController#create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:50:in 'TransactionsController#create'
+  [1m[36mTransaction Create (0.7ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ('usd', 'btc', 10.0, 0.0, 1, 2, '2025-05-23 14:40:56.965477', '2025-05-23 14:40:56.965477') RETURNING "id" /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:50:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:50:in 'TransactionsController#create'
+Completed 500 Internal Server Error in 384ms (Views: 0.3ms | ActiveRecord: 10.9ms (4 queries, 1 cached) | GC: 3.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/transactions_controller.rb:51:in 'TransactionsController#create'
+Started POST "/transactions" for ::1 at 2025-05-23 08:41:29 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/controllers/transactions_controller.rb:51:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:51:in 'TransactionsController#create'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:51:in 'TransactionsController#create'
+  [1m[36mTransaction Create (0.9ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ('usd', 'btc', 10.0, 0.0, 1, 2, '2025-05-23 14:41:30.093790', '2025-05-23 14:41:30.093790') RETURNING "id" /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:51:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:51:in 'TransactionsController#create'
+Completed 500 Internal Server Error in 402ms (Views: 0.5ms | ActiveRecord: 14.3ms (4 queries, 1 cached) | GC: 5.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/transactions_controller.rb:52:in 'TransactionsController#create'
+Started POST "/transactions" for ::1 at 2025-05-23 08:42:48 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 10, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ('usd', 'btc', 10.0, 0.00009111202223133343, 1, 2, '2025-05-23 14:42:48.992214', '2025-05-23 14:42:48.992214') RETURNING "id" /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+Completed 201 Created in 388ms (Views: 2.5ms | ActiveRecord: 16.1ms (4 queries, 1 cached) | GC: 2.3ms)
+
+
+Started POST "/transactions" for ::1 at 2025-05-23 08:43:23 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 1, "receiver_id" => 2, "coin_to_send" => "btc", "coin_to_receive" => "usd", "amount_to_send" => 0.00192734, "transaction" => {"coin_to_send" => "btc", "coin_to_receive" => "usd", "amount_to_send" => 0.00192734, "sender_id" => 1, "receiver_id" => 2}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTransaction Create (0.8ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ('btc', 'usd', 0.00192734, 211.5352017, 1, 2, '2025-05-23 14:43:23.642853', '2025-05-23 14:43:23.642853') RETURNING "id" /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+Completed 201 Created in 354ms (Views: 3.5ms | ActiveRecord: 4.6ms (4 queries, 1 cached) | GC: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2025-05-23 08:43:40 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12, "user" => {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ('Yazmin', 12.0, 100.12, '2025-05-23 14:43:40.898708', '2025-05-23 14:43:40.898708') RETURNING "id" /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+Completed 201 Created in 23ms (Views: 1.3ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/transactions" for ::1 at 2025-05-23 08:44:11 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 3, "receiver_id" => 2, "coin_to_send" => "btc", "coin_to_receive" => "usd", "amount_to_send" => 3, "transaction" => {"coin_to_send" => "btc", "coin_to_receive" => "usd", "amount_to_send" => 3, "sender_id" => 3, "receiver_id" => 2}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:21:in 'TransactionsController#create'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTransaction Create (1.7ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ('btc', 'usd', 3.0, 329256.0, 3, 2, '2025-05-23 14:44:11.487885', '2025-05-23 14:44:11.487885') RETURNING "id" /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:48:in 'TransactionsController#create'
+Completed 201 Created in 443ms (Views: 1.3ms | ActiveRecord: 5.9ms (4 queries, 1 cached) | GC: 1.0ms)
+
+

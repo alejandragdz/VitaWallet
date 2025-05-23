@@ -24,7 +24,26 @@ RSpec.describe "/transactions", type: :request do
       "coin_to_send" => "usd",
       "coin_to_receive" => "btc",
       "amount_to_send" => "100.0",
-      # "amount_to_receive" => "9.99",
+      "sender_id" => user.id,
+      "receiver_id" => user_2.id
+    }
+  }
+
+  let(:valid_attributes_btc) {
+    {
+      "coin_to_send" => "btc",
+      "coin_to_receive" => "usd",
+      "amount_to_send" => "30.0",
+      "sender_id" => user.id,
+      "receiver_id" => user_2.id
+    }
+  }
+
+  let(:valid_attributes_same) {
+    {
+      "coin_to_send" => "usd",
+      "coin_to_receive" => "usd",
+      "amount_to_send" => "30.0",
       "sender_id" => user.id,
       "receiver_id" => user_2.id
     }
@@ -36,7 +55,6 @@ RSpec.describe "/transactions", type: :request do
       "coin_to_receive" => "btc",
       "amount_to_send" => "100.0",
       "sender_id" => user.id
-      # "receiver_id" => user_2.id
     }
   }
 
@@ -45,8 +63,8 @@ RSpec.describe "/transactions", type: :request do
       "coin_to_send" => "usd",
       "coin_to_receive" => "btc",
       "amount_to_send" => "1000.0",
-      "sender_id" => user.id
-      # "receiver_id" => user_2.id
+      "sender_id" => user.id,
+      "receiver_id" => user_2.id
     }
   }
 
@@ -111,11 +129,18 @@ RSpec.describe "/transactions", type: :request do
         expect(response.content_type).to match(a_string_including("application/json"))
       end
 
-      it "explicit response, new transaction" do
-        post "/transactions", :params => { :transaction => valid_attributes}
+      it "creates a new Transaction btc to usd" do
+        post "/transactions", :params => { :transaction => valid_attributes_btc}
         expect(response).to have_http_status(201)
         res = JSON.parse(response.body)
-        expect(res).to include(valid_attributes)
+        expect(res).to include(valid_attributes_btc)
+      end
+
+      it "creates a new Transaction usd to usd" do
+        post "/transactions", :params => { :transaction => valid_attributes_same}
+        expect(response).to have_http_status(201)
+        res = JSON.parse(response.body)
+        expect(res).to include(valid_attributes_same)
       end
     end
 
@@ -157,13 +182,15 @@ RSpec.describe "/transactions", type: :request do
   describe "CoinGecko" do
     it "connect to third API" do
       get "/transactions/convert"
-      expect(response).to have_http_status(200)
-      expect(response.content_type).to match(a_string_including("application/json"))
-      res = JSON.parse(response.body)
-      expect(res).to include("bitcoin")
-      expect(res['bitcoin']).to include("usd")
-      # Respuesta de CoinGecko, valor que se utilizará para convertir btc a usd y al contrario
-      puts res['bitcoin']['usd']
+      # Se comentó el test porque ya se probó que funciona pero como es de uso interno so devuelve nada
+      expect(response).to have_http_status(204)
+      # expect(response).to have_http_status(200)
+      # expect(response.content_type).to match(a_string_including("application/json"))
+      # res = JSON.parse(response.body)
+      # expect(res).to include("bitcoin")
+      # expect(res['bitcoin']).to include("usd")
+      # # Respuesta de CoinGecko, valor que se utilizará para convertir btc a usd y al contrario
+      # puts res['bitcoin']['usd']
     end
   end
 end

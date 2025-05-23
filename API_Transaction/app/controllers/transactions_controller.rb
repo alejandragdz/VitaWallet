@@ -2,7 +2,7 @@ require 'uri'
 require 'net/http'
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[ show destroy ]
-  # before_action :convert, only: %i[  ]
+  before_action :convert, only: %i[ create ]
 
   # GET /transactions
   def index
@@ -25,6 +25,26 @@ class TransactionsController < ApplicationController
     if balance_validation
       render json: { error: 'Balance insuficiente' }, status: 400
     else
+      coin_to_send = @transaction.coin_to_send
+      coin_to_receive = @transaction.coin_to_receive
+      amount_to_send = @transaction.amount_to_send
+
+      # Es posible hacer una transferencia de la misma moneda
+      if coin_to_send == coin_to_receive
+        @transaction.amount_to_receive = amount_to_send
+      
+      # Si la moneda que se envía es diferente a la que se recibe, hay que hacer la conversión
+      # Y usar la API CoinGecko
+      else
+        if coin_to_receive == 'btc'
+          # Para convertir de usd a btc se multiplica la cantidad que se envía por 1 entre el valor de conversión
+          @transaction.amount_to_receive = amount_to_send * (1.0 / @usd_convert)
+        else
+          # Para convertir de btc a usd se multiplica la cantidad que se envía por el valor de conversión
+          @transaction.amount_to_receive = amount_to_send * @usd_convert
+        end
+      end
+
       if @transaction.save
         render json: @transaction, status: :created, location: @transaction
       else
@@ -51,7 +71,6 @@ class TransactionsController < ApplicationController
     response = http.request(request)
     response = JSON.parse(response.read_body)
     @usd_convert = response['bitcoin']['usd']
-    render json: response
   end
 
   private
