@@ -1681,3 +1681,106 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/users" for ::1 at 2025-05-23 14:06:26 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ApiTransaction'*/[0m
+Processing by UsersController#index as */*
+  Parameters: {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12, "user" => {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:8:in 'UsersController#index'
+Completed 200 OK in 26ms (Views: 12.4ms | ActiveRecord: 23.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/transactions/15" for ::1 at 2025-05-23 14:06:58 -0600
+Processing by TransactionsController#show as */*
+  Parameters: {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12, "id" => "15", "transaction" => {}}
+  [1m[36mTransaction Load (1.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 15 LIMIT 1 /*action='show',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:100:in 'TransactionsController#set_transaction'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:20:in 'TransactionsController#show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='show',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:24:in 'TransactionsController#show'
+Completed 200 OK in 57ms (Views: 1.2ms | ActiveRecord: 9.2ms (3 queries, 0 cached) | GC: 0.9ms)
+
+
+Started POST "/user/" for ::1 at 2025-05-23 14:10:04 -0600
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+Started POST "/users/" for ::1 at 2025-05-23 14:10:16 -0600
+Processing by UsersController#create as */*
+  Parameters: {"name" => "Juan", "btc_wallet" => 12.01839422, "usd_wallet" => 100.12, "user" => {"name" => "Juan", "btc_wallet" => 12.01839422, "usd_wallet" => 100.12}}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+  [1m[36mUser Create (6.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "btc_wallet", "usd_wallet", "created_at", "updated_at") VALUES ('Juan', 12.01839422, 100.12, '2025-05-23 20:10:16.321779', '2025-05-23 20:10:16.321779') RETURNING "id" /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:20:in 'UsersController#create'
+Completed 201 Created in 65ms (Views: 4.5ms | ActiveRecord: 7.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/transactions/" for ::1 at 2025-05-23 14:11:39 -0600
+Processing by TransactionsController#index as */*
+  Parameters: {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12, "transaction" => {}}
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" /*action='index',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:10:in 'TransactionsController#index'
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/" for ::1 at 2025-05-23 14:11:45 -0600
+Processing by UsersController#index as */*
+  Parameters: {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12, "user" => {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /*action='index',application='ApiTransaction',controller='users'*/[0m
+  ↳ app/controllers/users_controller.rb:8:in 'UsersController#index'
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/transactions/" for ::1 at 2025-05-23 14:12:33 -0600
+Processing by TransactionsController#index as */*
+  Parameters: {"name" => "Yazmin", "btc_wallet" => 12, "usd_wallet" => 100.12, "transaction" => {}}
+  [1m[36mTransaction Load (0.4ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" /*action='index',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:10:in 'TransactionsController#index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/transactions/15" for ::1 at 2025-05-23 14:13:18 -0600
+Processing by TransactionsController#show as */*
+  Parameters: {"sender_id" => 3, "receiver_id" => 2, "coin_to_send" => "btc", "coin_to_receive" => "usd", "amount_to_send" => 1, "id" => "15", "transaction" => {"coin_to_send" => "btc", "coin_to_receive" => "usd", "amount_to_send" => 1, "sender_id" => 3, "receiver_id" => 2}}
+  [1m[36mTransaction Load (0.7ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions" WHERE "transactions"."id" = 15 LIMIT 1 /*action='show',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:100:in 'TransactionsController#set_transaction'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='show',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:20:in 'TransactionsController#show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1 /*action='show',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:24:in 'TransactionsController#show'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/transactions/" for ::1 at 2025-05-23 14:18:59 -0600
+Processing by TransactionsController#create as */*
+  Parameters: {"sender_id" => 6, "receiver_id" => 2, "coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 50, "transaction" => {"coin_to_send" => "usd", "coin_to_receive" => "btc", "amount_to_send" => 50, "sender_id" => 6, "receiver_id" => 2}}
+  [1m[36mUser Load (26.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:37:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:64:in 'TransactionsController#create'
+  [1m[36mCACHE User Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1[0m
+  ↳ app/controllers/transactions_controller.rb:64:in 'TransactionsController#create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:64:in 'TransactionsController#create'
+  [1m[36mTransaction Create (2.6ms)[0m  [1m[32mINSERT INTO "transactions" ("coin_to_send", "coin_to_receive", "amount_to_send", "amount_to_receive", "sender_id", "receiver_id", "created_at", "updated_at") VALUES ('usd', 'btc', 50.0, 0.00046029071961851105, 6, 2, '2025-05-23 20:19:00.321670', '2025-05-23 20:19:00.321670') RETURNING "id" /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:64:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/controllers/transactions_controller.rb:64:in 'TransactionsController#create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/models/user.rb:21:in 'User#update_wallet'
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "usd_wallet" = 50.12, "updated_at" = '2025-05-23 20:19:00.336860' WHERE "users"."id" = 6 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/models/user.rb:21:in 'User#update_wallet'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/models/user.rb:21:in 'User#update_wallet'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/models/user.rb:23:in 'User#update_wallet'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "btc_wallet" = 0.00238763071961851105, "updated_at" = '2025-05-23 20:19:00.368538' WHERE "users"."id" = 2 /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/models/user.rb:23:in 'User#update_wallet'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*action='create',application='ApiTransaction',controller='transactions'*/[0m
+  ↳ app/models/user.rb:23:in 'User#update_wallet'
+Completed 201 Created in 572ms (Views: 0.8ms | ActiveRecord: 46.0ms (6 queries, 1 cached) | GC: 0.0ms)
+
+

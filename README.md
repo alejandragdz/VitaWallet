@@ -7,6 +7,10 @@
 ## **RSPEC**: Pruebas
     - Mostrar toda la covertura de las pruebas
         `bundle exec rspec --format documentation`
+    - Ver coverage en:
+        API_Transaction/coverage/index.html
+        ![Último coverage](ultimo_coverage.png)
+
     - Pruebas a los endpoints
         - Transactions
             `bundle exec rspec spec/requests/transactions_spec.rb --format documentation`
