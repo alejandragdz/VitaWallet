@@ -12,7 +12,23 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/1
   def show
-    render json: @transaction
+    # render json: @transaction
+    render json: {
+      transaction: {
+        sender: {
+          id: @transaction.sender_id,
+          name: @transaction.sender.name
+        },
+        receiver: {
+          id: @transaction.receiver_id,
+          name: @transaction.receiver.name
+        },
+        coin_to_send: @transaction.coin_to_send,
+        coin_to_receive: @transaction.coin_to_receive,
+        amount_to_send: @transaction.amount_to_send,
+        amount_to_receive: @transaction.amount_to_receive
+      }
+    }
   end
 
   # POST /transactions
