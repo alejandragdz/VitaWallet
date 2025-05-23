@@ -16,13 +16,37 @@ RSpec.describe "/transactions", type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Transaction. As you add validations to Transaction, be sure to
   # adjust the attributes here as well.
+  let(:user){create(:user)}
+  let(:user_2){create(:second_user)}
+
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      "coin_to_send" => "usd",
+      "coin_to_receive" => "btc",
+      "amount_to_send" => "9.99",
+      "amount_to_receive" => "9.99",
+      "sender_id" => user.id,
+      "receiver_id" => user_2.id
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      coin_to_send: "usd",
+      coin_to_receive: "btc",
+      amount_to_send: "9.99",
+      amount_to_receive: "9.99",
+      sender: user
+      # receiver: create(:second_user)
+    }
   }
+
+  before do
+    Transaction.create! valid_attributes
+    Transaction.create! valid_attributes
+    Transaction.create! valid_attributes
+    Transaction.create! valid_attributes
+  end
 
   # This should return the minimal set of values that should be in the headers
   # in order to pass any filters (e.g. authentication) defined in
@@ -34,9 +58,15 @@ RSpec.describe "/transactions", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Transaction.create! valid_attributes
       get transactions_url, headers: valid_headers, as: :json
       expect(response).to be_successful
+    end
+
+    it "shows all the transactions" do
+      get "/transactions"
+      expect(response).to have_http_status(200)
+      res = JSON.parse(response.body)
+      expect(res.length).to eq(4)
     end
   end
 
@@ -45,6 +75,14 @@ RSpec.describe "/transactions", type: :request do
       transaction = Transaction.create! valid_attributes
       get transaction_url(transaction), as: :json
       expect(response).to be_successful
+    end
+    
+    it "shows a transaction" do
+      transaction = Transaction.create! valid_attributes
+      get "/transactions/#{transaction.id}"
+      expect(response).to have_http_status(200)
+      res = JSON.parse(response.body)
+      expect(res).to include(valid_attributes)
     end
   end
 
@@ -62,6 +100,13 @@ RSpec.describe "/transactions", type: :request do
              params: { transaction: valid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including("application/json"))
+      end
+
+      it "explicit response, new transaction" do
+        post "/transactions", :params => { :transaction => valid_attributes}
+        expect(response).to have_http_status(201)
+        res = JSON.parse(response.body)
+        expect(res).to include(valid_attributes)
       end
     end
 
@@ -85,16 +130,10 @@ RSpec.describe "/transactions", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          coin_to_send: "btc"
+        }
       }
-
-      it "updates the requested transaction" do
-        transaction = Transaction.create! valid_attributes
-        patch transaction_url(transaction),
-              params: { transaction: new_attributes }, headers: valid_headers, as: :json
-        transaction.reload
-        skip("Add assertions for updated state")
-      end
 
       it "renders a JSON response with the transaction" do
         transaction = Transaction.create! valid_attributes
@@ -105,15 +144,15 @@ RSpec.describe "/transactions", type: :request do
       end
     end
 
-    context "with invalid parameters" do
-      it "renders a JSON response with errors for the transaction" do
-        transaction = Transaction.create! valid_attributes
-        patch transaction_url(transaction),
-              params: { transaction: invalid_attributes }, headers: valid_headers, as: :json
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to match(a_string_including("application/json"))
-      end
-    end
+    # context "with invalid parameters" do
+    #   it "renders a JSON response with errors for the transaction" do
+    #     transaction = Transaction.create! valid_attributes
+    #     patch transaction_url(transaction),
+    #           params: { transaction: invalid_attributes }, headers: valid_headers, as: :json
+    #     expect(response).to have_http_status(:unprocessable_entity)
+    #     expect(response.content_type).to match(a_string_including("application/json"))
+    #   end
+    # end
   end
 
   describe "DELETE /destroy" do

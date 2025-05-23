@@ -5,12 +5,86 @@
         "lines": [
           1,
           1,
+          1,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
       "/Users/alejandra/Documents/VitaWallet/API_Transaction/app/models/application_record.rb": {
         "lines": [
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/alejandra/Documents/VitaWallet/API_Transaction/app/models/transaction.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/alejandra/Documents/VitaWallet/API_Transaction/app/controllers/transactions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          5,
+          null,
+          5,
+          3,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/Users/alejandra/Documents/VitaWallet/API_Transaction/app/controllers/application_controller.rb": {
+        "lines": [
           1,
           null
         ]
@@ -69,14 +143,8 @@
           null,
           null
         ]
-      },
-      "/Users/alejandra/Documents/VitaWallet/API_Transaction/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1747948713
+    "timestamp": 1748006053
   }
 }
