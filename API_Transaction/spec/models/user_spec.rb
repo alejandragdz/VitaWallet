@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     # it { should have_many(:transactions)}
 
-    it 'validate__usd_balance' do
+    it 'validate_usd_balance' do
       # usd_wallet  { 150.00 }
       expect(user.validate_balance('usd', 150)).to eq(true)
       expect(user.validate_balance('usd', 100)).to eq(true)
@@ -28,6 +28,32 @@ RSpec.describe User, type: :model do
     it 'validates_errors' do
       expect(user.validate_balance('bct', 10)).to eq(false)
       expect(user.validate_balance('ust', 10)).to eq(false)
+    end
+  end
+
+  describe 'update_wallet' do
+    it 'update_usd_wallet_sender' do
+      # usd_wallet  { 150.00 }
+      user.update_wallet('usd', true, 100)
+      expect(user.usd_wallet).to eq(50.00)
+    end
+
+    it 'update_usd_wallet_receiver' do
+      # usd_wallet  { 150.00 }
+      user.update_wallet('usd', false, 100)
+      expect(user.usd_wallet).to eq(250.00)
+    end
+
+    it 'update_btc_wallet_sender' do
+      # btc_wallet  { 31.01491002 }
+      user.update_wallet('btc', true, 10)
+      expect(user.btc_wallet).to eq(21.01491002)
+    end
+
+    it 'update_btc_wallet_receiver' do
+      # btc_wallet  { 31.01491002 }
+      user.update_wallet('btc', false, 10)
+      expect(user.btc_wallet).to eq(41.01491002)
     end
   end
 end
