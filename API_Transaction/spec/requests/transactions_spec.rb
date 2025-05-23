@@ -163,4 +163,17 @@ RSpec.describe "/transactions", type: :request do
       }.to change(Transaction, :count).by(-1)
     end
   end
+
+  describe "CoinGecko" do
+    it "connect to third API" do
+      get "/transactions/convert"
+      expect(response).to have_http_status(200)
+      expect(response.content_type).to match(a_string_including("application/json"))
+      res = JSON.parse(response.body)
+      expect(res).to include("bitcoin")
+      expect(res['bitcoin']).to include("usd")
+      # Respuesta de CoinGecko, valor que se utilizará para convertir btc a usd y al contrario
+      puts res['bitcoin']['usd']
+    end
+  end
 end

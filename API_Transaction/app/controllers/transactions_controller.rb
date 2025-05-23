@@ -53,6 +53,7 @@ class TransactionsController < ApplicationController
     response = http.request(request)
     response = JSON.parse(response.read_body)
     @usd_convert = response['bitcoin']['usd']
+    render json: response
   end
 
   private
